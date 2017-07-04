@@ -10,12 +10,17 @@ public class Order {
 	private int _itemPrice;
 
 	double getPrice() {
-		final double discountFactor;
+		final double discountFactor = discountFactor();
+		return basePrice() * discountFactor;
+	}
+
+	private double discountFactor() {
+		double discountFactor;
 		if (basePrice() > 1000)
 			discountFactor = 0.95;
 		else
 			discountFactor = 0.98;
-		return basePrice() * discountFactor;
+		return discountFactor;
 	}
 
 	private int basePrice() {
