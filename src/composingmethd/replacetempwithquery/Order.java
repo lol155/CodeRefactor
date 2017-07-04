@@ -18,6 +18,6 @@ public class Order {
 	}
 
 	private int basePrice() {
-		return _quantity * _itemPrice ;
+		return _quantity * _itemPrice;
 	}
 }
