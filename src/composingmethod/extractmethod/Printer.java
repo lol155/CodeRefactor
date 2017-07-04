@@ -13,19 +13,22 @@ public class Printer {
 	private String _name;
 
 	void printOwing() {
+
+		printBanner();
+		double outstanding = getOutstanding();
+		printDetails(outstanding);
+
+
+	}
+
+	private double getOutstanding() {
 		Enumeration e = _orders.elements();
 		double outstanding = 0.0;
-		
-		printBanner();
-		
-		// calculate outstanding
 		while (e.hasMoreElements()) {
 			Order each = (Order) e.nextElement();
 			outstanding += each.getAmount();
 		}
-		printDetails(outstanding);
-
-
+		return outstanding;
 	}
 
 	private void printDetails(double outstanding) {
