@@ -23,8 +23,12 @@ public class Printer {
 			Order each = (Order) e.nextElement();
 			outstanding += each.getAmount();
 		}
+		printDetails(outstanding);
 
-		// print details
+
+	}
+
+	private void printDetails(double outstanding) {
 		System.out.println("name:" + _name);
 		System.out.println("amount" + outstanding);
 	}
