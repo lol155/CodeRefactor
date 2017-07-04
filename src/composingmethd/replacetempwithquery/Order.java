@@ -14,12 +14,7 @@ public class Order {
 	}
 
 	private double discountFactor() {
-		double discountFactor;
-		if (basePrice() > 1000)
-			discountFactor = 0.95;
-		else
-			discountFactor = 0.98;
-		return discountFactor;
+		return basePrice() > 1000 ? 0.95 : 0.98;
 	}
 
 	private int basePrice() {
